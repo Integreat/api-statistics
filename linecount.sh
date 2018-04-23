@@ -1,7 +1,13 @@
 #!/bin/bash
 # Param1: log file, Param2: city name
-LANGS="/en/ /de/ /ar/ /fr/ /es/ /fa/ /am/ /ru/";
-MONTHS="Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec";
+
+if [ -z "$LANGS" ]; then
+    LANGS="/en/ /de/ /ar/ /fr/ /es/ /fa/ /am/ /ru/";
+fi
+echo "$MONTHS"
+if [ -z "$MONTHS" ]; then
+    MONTHS="Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec";
+fi
 
 if [[ -z $1 || $1 == "--help" || $1 == "-h" ]]; then
 	echo "Usage: linecount.sh [ACCESS.LOG] [CITY]"
